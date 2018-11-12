@@ -2,7 +2,9 @@ var arr = [8, 90, 3, 6, 28, -1, 56, 14, 11];
 var n = arr.length;
 
 // Selection sort
-function sort() {
+function selectionSort() {
+
+    var selResult = document.getElementById('selectionSortResult');
 
     for (i = 0; i < n; i++) {
 
@@ -46,7 +48,14 @@ function sort() {
 
     // Print sorted array
     console.log("Sorted array:");
+    var sorted = "";
     for (k = 0; k < n; k++) {
-        console.log(arr[k]);
+        sorted += arr[k] + " ";
     }
+    console.log(sorted);
+
+
+    var resultPrint = "<p>" + sorted + "</p>";
+    selResult.innerHTML = resultPrint;
+
 }
