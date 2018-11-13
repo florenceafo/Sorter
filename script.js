@@ -1,10 +1,21 @@
-var arr = [8, 90, 3, 6, 28, -1, 56, 14, 11];
-var n = arr.length;
+
 
 // Selection sort
 function selectionSort() {
 
+    var sortArray = document.getElementById('inputArray').value;
+
+    var arr = sortArray.split(",");
+
+    
+
+    var n = arr.length;
+
     var selResult = document.getElementById('selectionSortResult');
+
+    //var inputArray = String(document.getElementById('inputArray').innerHTML );
+
+
 
     for (i = 0; i < n; i++) {
 
@@ -19,31 +30,29 @@ function selectionSort() {
             // If this element is less, it is the new min
             if (arr[j] < min) {
                 min = arr[j];
-                console.log("min is " + min);
+
                 minIndex = j;
 
             }
+            console.log("min is: " + min);
         }
 
 
+        // Create a separate swap function
         var swap = false;
         if (min != arr[i]) {
-            console.log("swap");
+            //console.log("swap");
             var temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
             swap = true;
         }
         if (swap) {
-            console.log("Swapped");
+            //console.log("Swapped");
         } else {
-            console.log("not swaped");
+            //console.log("not swaped");
         }
 
-
-        for (k = 0; k < n; k++) {
-            console.log(arr[k]);
-        }
     }
 
     // Print sorted array
@@ -55,7 +64,7 @@ function selectionSort() {
     console.log(sorted);
 
 
-    var resultPrint = "<p>" + sorted + "</p>";
+    var resultPrint = "<p>Sorted: " + sorted + "</p>";
     selResult.innerHTML = resultPrint;
 
 }
