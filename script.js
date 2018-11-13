@@ -1,13 +1,45 @@
 
 
 // Selection sort
+
+function sortFunction() {
+    var sortArray = document.getElementById('inputArray').value;
+
+    var arr = sortArray.split(",");
+    var n = arr.length;
+
+
+    arr.sort(compareNumbers);
+
+    console.log("Sorted: " + arr);
+    // var resultPrint = "<p>Sorted: " + arr + "</p>";
+    // sortArray.innerHTML = resultPrint;
+}
+
+// function sort(a, b) {
+//     return a - b;
+// }
+
+function compareNumbers(a, b)
+{
+    return a - b;
+}
+
+
+
 function selectionSort() {
 
     var sortArray = document.getElementById('inputArray').value;
 
     var arr = sortArray.split(",");
+    var n = arr.length;
 
-    
+    var y;
+    var z = [];
+    for (i = 0; i < n; i++) {
+        y = arr[i];
+        z[i] = Number(y);
+    }
 
     var n = arr.length;
 
